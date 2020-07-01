@@ -11,16 +11,16 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.category.title_singular') }} {{ trans('global.list') }}
+         {{ trans('global.list') }} {{ trans('cruds.category.title_singular') }}
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-Category">
-                <thead>
+            <table class=" table table-striped table-hover datatable datatable-Category table-borderless">
+                <thead class="thead-table">
                     <tr>
                         <th width="10">
-
+                            
                         </th>
                         <th>
                             {{ trans('cruds.category.fields.id') }}
@@ -32,6 +32,7 @@
                             {{ trans('cruds.category.fields.color') }}
                         </th>
                         <th>
+                            <span class="">Opción</span>
                             &nbsp;
                         </th>
                     </tr>
@@ -40,7 +41,10 @@
                     @foreach($categories as $key => $category)
                         <tr data-entry-id="{{ $category->id }}">
                             <td>
-
+                                {{-- aqui --}}
+                                <div class="text center pl-2">
+                                    <input type="checkbox" > 
+                                </div>
                             </td>
                             <td>
                                 {{ $category->id ?? '' }}
@@ -48,17 +52,24 @@
                             <td>
                                 {{ $category->name ?? '' }}
                             </td>
-                            <td style="background-color:{{ $category->color ?? '#FFFFFF' }}"></td>
-                            <td>
+                            <td >
+                                <div style="background-color:{{ $category->color ?? '#FFFFFF' }}">
+                                    <div class="color-size rounded">
+                                        
+                                    </div>
+                                </div>
+                                 
+                            </td>
+                            <td class="">
                                 @can('category_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.categories.show', $category->id) }}">
-                                        {{ trans('global.view') }}
+                                        {{ trans('global.view') }}<i class="far fa-eye pl-1" ></i>
                                     </a>
                                 @endcan
 
                                 @can('category_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.categories.edit', $category->id) }}">
-                                        {{ trans('global.edit') }}
+                                        {{ trans('global.edit') }}<i class="fas fa-pencil-alt pl-1"></i>
                                     </a>
                                 @endcan
 
@@ -66,7 +77,10 @@
                                     <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        <div class="btn btn-xs btn-danger" type="submit" >
+                                            <input class="bg-danger border-0" type="submit" value="{{ trans('global.delete') }}">
+                                            <i class="fas fa-trash-alt pl-1"></i>
+                                        </div>
                                     </form>
                                 @endcan
 

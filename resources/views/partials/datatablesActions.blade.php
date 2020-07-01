@@ -1,11 +1,11 @@
 @can($viewGate)
     <a class="btn btn-xs btn-primary" href="{{ route('admin.' . $crudRoutePart . '.show', $row->id) }}">
-        {{ trans('global.view') }}
+        {{ trans('global.view') }}<i class="far fa-eye pl-1" ></i>
     </a>
 @endcan
 @can($editGate)
     <a class="btn btn-xs btn-info" href="{{ route('admin.' . $crudRoutePart . '.edit', $row->id) }}">
-        {{ trans('global.edit') }}
+        {{ trans('global.edit') }}<i class="fas fa-pencil-alt pl-1"></i>
     </a>
 @endcan
 @can($deleteGate)

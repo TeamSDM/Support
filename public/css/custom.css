@@ -20,7 +20,7 @@ textarea {
 
 .dt-buttons .btn {
     margin-left: 0.333em;
-    border-radius: 0;
+    border-radius: 5px;
 }
 
 .table.datatable {
@@ -52,6 +52,7 @@ table.dataTable thead th {
 .btn-info,
 .badge-info {
     color: white;
+    background-color:#007bff !important;
 }
 
 table.dataTable thead .sorting,
@@ -66,7 +67,7 @@ table.dataTable thead .sorting_desc {
 
 .btn-default {
     color: #23282c;
-    background-color: #f0f3f5;
+    background-color:#B5BABE !important;
     border-color: #f0f3f5;
 }
 
@@ -105,4 +106,15 @@ table.dataTable thead .sorting_desc {
 .select2-results__option {
     padding-left: 0px;
     padding-right: 0px;
+}
+.thead-table{
+    background-color: #B5BABE !important;
+}
+.line-horizontal{
+    border-bottom: 1px solid black;
+}
+.color-size{
+    width: 15px; 
+    height: 20px;
+    border-radius: 10px;
 }

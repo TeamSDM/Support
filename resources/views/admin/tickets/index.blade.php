@@ -13,14 +13,12 @@
     <div class="card-header">
         {{ trans('cruds.ticket.title_singular') }} {{ trans('global.list') }}
     </div>
-
+    
     <div class="card-body">
         <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-Ticket">
             <thead>
                 <tr>
-                    <th width="10">
-
-                    </th>
+                    <th width="10"></th>
                     <th>
                         {{ trans('cruds.ticket.fields.id') }}
                     </th>
@@ -86,6 +84,7 @@ let filters = `
       @endforeach
     </select>
   </div>
+  
 </form>`;
 $('.card-body').on('change', 'select', function() {
   $('#filtersForm').submit();

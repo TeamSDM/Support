@@ -11,7 +11,7 @@
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
-                        <th>
+                        <th class="bg-dark ">
                             {{ trans('cruds.auditLog.fields.id') }}
                         </th>
                         <td>
@@ -19,7 +19,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.description') }}
                         </th>
                         <td>
@@ -27,7 +27,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.subject_id') }}
                         </th>
                         <td>
@@ -35,7 +35,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.subject_type') }}
                         </th>
                         <td>
@@ -43,7 +43,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.user_id') }}
                         </th>
                         <td>
@@ -51,7 +51,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.properties') }}
                         </th>
                         <td>
@@ -59,7 +59,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.host') }}
                         </th>
                         <td>
@@ -67,7 +67,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>
+                        <th class="bg-dark">
                             {{ trans('cruds.auditLog.fields.created_at') }}
                         </th>
                         <td>
