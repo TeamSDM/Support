@@ -3,25 +3,21 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.category.title') }}
+        <h5>Visualizar Categoria</h5>
     </div>
 
     <div class="card-body">
         <div class="row text-center">
             <div class="col-12 col-md-4 col-sm-12">                
                 <div class="shadow rounded p-2">
-                    <div class="line-horizontal">
-                        {{ trans('cruds.category.fields.id') }}
-                    </div>
-                    <div class="p-3">
-                        {{ $category->id }}
-                    </div>                    
+                    <div class="line-horizontal"><span>ID</span></div>
+                    <div class="p-3">{{ $category->id }}</div>         
                 </div>
             </div>
             <div class="col-12 col-md-4 col-sm-12">
                 <div class="shadow rounded p-2">
                     <div class="line-horizontal">
-                        {{ trans('cruds.category.fields.name') }}
+                        <span>Nombre</span>
                     </div>
                 <div class="p-3">
                     {{ $category->name }}
@@ -31,10 +27,10 @@
             <div class="col-12 col-md-4 col-sm-12">
                <div class="shadow rounded p-2 ">
                    <div class="line-horizontal">
-                       {{ trans('cruds.category.fields.color') }}
+                       <span>Color</span>
                    </div>
                 <div class="p-3">
-                    <div style="background-color:{{ $category->color ?? '#FFFFFF' }}">
+                    <div style="background-color:{{ $category->color ?? '#000000' }}">
                         <div class="color-size rounded">
                             
                         </div>
@@ -71,7 +67,7 @@
                 </tbody>
             </table> --}}
             <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">
-                {{ trans('global.back_to_list') }}
+                <span>volver al listado</span>
             </a>
         </div>
 

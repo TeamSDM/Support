@@ -17,7 +17,7 @@
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
                         </i>
-                        {{ trans('cruds.userManagement.title') }}
+                        Administración de usuarios
                     </a>
                     <ul class="nav-dropdown-items">
                         
@@ -27,7 +27,7 @@
                                     <i class="fa-fw fas fa-unlock-alt nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.permission.title') }}
+                                    Permisos
                                 </a>
                             </li>
                         @endcan
@@ -37,7 +37,7 @@
                                     <i class="fa-fw fas fa-briefcase nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.role.title') }}
+                                    Roles
                                 </a>
                             </li>
                         @endcan
@@ -47,7 +47,7 @@
                                     <i class="fa-fw fas fa-user nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.user.title') }}
+                                    Usuarios
                                 </a>
                             </li>
                         @endcan
@@ -57,7 +57,7 @@
                                     <i class="fa-fw fas fa-file-alt nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.auditLog.title') }}
+                                    Auditoría de registros
                                 </a>
                             </li>
                         @endcan
@@ -70,7 +70,7 @@
                         <i class="fa-fw fas fa-cogs nav-icon">
 
                         </i>
-                        {{ trans('cruds.status.title') }}
+                        Estados
                     </a>
                 </li>
             @endcan
@@ -80,7 +80,7 @@
                         <i class="fa-fw fas fa-cogs nav-icon">
 
                         </i>
-                        {{ trans('cruds.priority.title') }}
+                        Prioridades
                     </a>
                 </li>
             @endcan
@@ -90,7 +90,7 @@
                         <i class="fa-fw fas fa-tags nav-icon">
 
                         </i>
-                        {{ trans('cruds.category.title') }}
+                        Categorías
                     </a>
                 </li>
             @endcan
@@ -100,7 +100,7 @@
                         <i class="fa-fw fas fa-question-circle nav-icon">
 
                         </i>
-                        {{ trans('cruds.ticket.title') }}
+                        Ticket's
                     </a>
                 </li>
             @endcan
@@ -110,7 +110,7 @@
                         <i class="fa-fw fas fa-comment nav-icon">
 
                         </i>
-                        {{ trans('cruds.comment.title') }}
+                        Comentarios
                     </a>
                 </li>
             @endcan
@@ -119,7 +119,7 @@
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">
 
                     </i>
-                    {{ trans('global.logout') }}
+                    Cerrar Sesión
                 </a>
             </li>
         </ul>

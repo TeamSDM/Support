@@ -118,3 +118,10 @@ table.dataTable thead .sorting_desc {
     height: 20px;
     border-radius: 10px;
 }
+.textarea-coment{
+    width: 80%;
+}
+.drop-file{
+    border-radius: 10px;
+    border: 1px solid black;
+}

@@ -10,80 +10,43 @@
     </div>
 @endcan
 <div class="card">
-    <div class="card-header">
-      Lista de comentarios
-    </div>
-
+    <div class="card-header">Lista de comentarios</div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-Comment">
-                <thead>
+            <table class=" table table-borderless table-striped table-hover datatable datatable-Comment">
+                <thead class="thead-table">
                     <tr>
-                        <th width="10">
-
-                        </th>
-                        <th>
-                           Id
-                        </th>
-                        <th>
-                            Tiket
-                        </th>
-                        <th>
-                            Author
-                        </th>
-                        <th>
-                            Email
-                        </th>
-                        <th>
-                            Usuario
-                        </th>
-                        <th>
-                            Comentario
-                        </th>
-                        <th>
-                            &nbsp;
-                        </th>
+                        <th width="10"></th>
+                        
+                        <th>Ticket</th>
+                        <th>Author</th>
+                        <th>Email</th>
+                        <th>Usuario</th>
+                        <th>Comentario</th>
+                        <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($comments as $key => $comment)
                         <tr data-entry-id="{{ $comment->id }}">
-                            <td>
-
-                            </td>
-                            <td>
-                                {{ $comment->id ?? '' }}
-                            </td>
-                            <td>
-                                {{ $comment->ticket->title ?? '' }}
-                            </td>
-                            <td>
-                                {{ $comment->author_name ?? '' }}
-                            </td>
-                            <td>
-                                {{ $comment->author_email ?? '' }}
-                            </td>
-                            <td>
-                                {{ $comment->user->name ?? '' }}
-                            </td>
-                            <td>
-                                {{ $comment->comment_text ?? '' }}
-                            </td>
+                            <td></td>
+                            
+                            <td>{{ $comment->ticket->title ?? '' }}</td>
+                            <td>{{ $comment->author_name ?? '' }}</td>
+                            <td>{{ $comment->author_email ?? '' }}</td>
+                            <td>{{ $comment->user->name ?? '' }}</td>
+                            <td>{{ $comment->comment_text ?? '' }}</td>
                             <td>
                                 @can('comment_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.comments.show', $comment->id) }}">
-                                        Ver
-                                    </a>
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.comments.show', $comment->id) }}">Ver</a>
                                 @endcan
 
                                 @can('comment_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.comments.edit', $comment->id) }}">
-                                       Editar
-                                    </a>
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.comments.edit', $comment->id) }}">Editar</a>
                                 @endcan
 
                                 @can('comment_delete')
-                                    <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="Eliminar">
@@ -119,18 +82,18 @@
       });
 
       if (ids.length === 0) { 
-        alert('No se ha seleccionado nada')
+            alert('No se ha seleccionado nada')
 
         return
       }
 
       if (confirm('Desea eliminar?')) {
         $.ajax({
-          headers: {'x-csrf-token': _token},
-          method: 'POST',
-          url: config.url,
-          data: { ids: ids, _method: 'DELETE' }})
-          .done(function () { location.reload() })
+            headers: {'x-csrf-token': _token},
+            method: 'POST',
+            url: config.url,
+            data: { ids: ids, _method: 'DELETE' }})
+            .done(function () { location.reload() })
       }
     }
   }

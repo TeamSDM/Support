@@ -3,49 +3,29 @@
 @can('ticket_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route("admin.tickets.create") }}">
-                {{ trans('global.add') }} {{ trans('cruds.ticket.title_singular') }}
-            </a>
+            <a class="btn btn-success" href="{{ route("admin.tickets.create") }}">Agregar Ticket</a>
         </div>
     </div>
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.ticket.title_singular') }} {{ trans('global.list') }}
+        <h5>Lista de Ticket's</h5>
     </div>
     
     <div class="card-body">
-        <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-Ticket">
-            <thead>
+        <table class=" table table-borderless table-striped table-hover ajaxTable datatable datatable-Ticket">
+            <thead class="thead-table">
                 <tr>
                     <th width="10"></th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.id') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.title') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.status') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.priority') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.category') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.author_name') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.author_email') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.ticket.fields.assigned_to_user') }}
-                    </th>
-                    <th>
-                        &nbsp;
-                    </th>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Estado</th>
+                    <th>Prioridad</th>
+                    <th>Categoría</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Asignado</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
         </table>
@@ -62,7 +42,7 @@ let filters = `
 <form class="form-inline" id="filtersForm">
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="status">
-      <option value="">All statuses</option>
+      <option value="">Todos los estados</option>
       @foreach($statuses as $status)
         <option value="{{ $status->id }}"{{ request('status') == $status->id ? 'selected' : '' }}>{{ $status->name }}</option>
       @endforeach
@@ -70,7 +50,7 @@ let filters = `
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="priority">
-      <option value="">All priorities</option>
+      <option value="">Todas las prioridades</option>
       @foreach($priorities as $priority)
         <option value="{{ $priority->id }}"{{ request('priority') == $priority->id ? 'selected' : '' }}>{{ $priority->name }}</option>
       @endforeach
@@ -78,7 +58,7 @@ let filters = `
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="category">
-      <option value="">All categories</option>
+      <option value="">Todas las categorias</option>
       @foreach($categories as $category)
         <option value="{{ $category->id }}"{{ request('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
       @endforeach
@@ -102,12 +82,12 @@ $('.card-body').on('change', 'select', function() {
       });
 
       if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
+        alert('No se han seleccionado filas')
 
         return
       }
 
-      if (confirm('{{ trans('global.areYouSure') }}')) {
+      if (confirm('¿Está seguro?')) {
         $.ajax({
           headers: {'x-csrf-token': _token},
           method: 'POST',

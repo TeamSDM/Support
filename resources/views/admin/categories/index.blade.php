@@ -4,14 +4,14 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("admin.categories.create") }}">
-                {{ trans('global.add') }} {{ trans('cruds.category.title_singular') }}
+                <span>Agregar Categoria</span>
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
     <div class="card-header">
-         {{ trans('global.list') }} {{ trans('cruds.category.title_singular') }}
+         <h5>Lista Categoria</h5>
     </div>
 
     <div class="card-body">
@@ -19,66 +19,47 @@
             <table class=" table table-striped table-hover datatable datatable-Category table-borderless">
                 <thead class="thead-table">
                     <tr>
-                        <th width="10">
-                            
-                        </th>
-                        <th>
-                            {{ trans('cruds.category.fields.id') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.category.fields.name') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.category.fields.color') }}
-                        </th>
-                        <th>
-                            <span class="">Opción</span>
-                            &nbsp;
-                        </th>
+                        <th width="10"></th>
+                        <th><span>Nombre</span></th>
+                        <th><span>Color</span></th>
+                        <th><span class="">Opción</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($categories as $key => $category)
                         <tr data-entry-id="{{ $category->id }}">
                             <td>
-                                {{-- aqui --}}
+                                {{-- aqui
                                 <div class="text center pl-2">
                                     <input type="checkbox" > 
-                                </div>
+                                </div> --}}
                             </td>
-                            <td>
-                                {{ $category->id ?? '' }}
-                            </td>
-                            <td>
-                                {{ $category->name ?? '' }}
-                            </td>
+                            
+                            <td>{{ $category->name ?? '' }}</td>
                             <td >
-                                <div style="background-color:{{ $category->color ?? '#FFFFFF' }}">
-                                    <div class="color-size rounded">
-                                        
-                                    </div>
-                                </div>
-                                 
+                                <div style="background-color:{{ $category->color ?? '#000000' }}">
+                                    <div class="color-size rounded"></div>
+                                </div> 
                             </td>
                             <td class="">
                                 @can('category_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.categories.show', $category->id) }}">
-                                        {{ trans('global.view') }}<i class="far fa-eye pl-1" ></i>
+                                        Ver<i class="far fa-eye pl-1" ></i>
                                     </a>
                                 @endcan
 
                                 @can('category_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.categories.edit', $category->id) }}">
-                                        {{ trans('global.edit') }}<i class="fas fa-pencil-alt pl-1"></i>
+                                        Editar<i class="fas fa-pencil-alt pl-1"></i>
                                     </a>
                                 @endcan
 
                                 @can('category_delete')
-                                    <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="btn btn-xs btn-danger" type="submit" >
-                                            <input class="bg-danger border-0" type="submit" value="{{ trans('global.delete') }}">
+                                            <input class="bg-danger border-0" type="submit" value="Eliminar">
                                             <i class="fas fa-trash-alt pl-1"></i>
                                         </div>
                                     </form>
@@ -102,7 +83,7 @@
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 @can('category_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
+  let deleteButtonTrans = 'Eliminar seleccionados'
   let deleteButton = {
     text: deleteButtonTrans,
     url: "{{ route('admin.categories.massDestroy') }}",
@@ -113,12 +94,12 @@
       });
 
       if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
+        alert('No hay filas seleccionadas')
 
         return
       }
 
-      if (confirm('{{ trans('global.areYouSure') }}')) {
+      if (confirm('¿Está seguro?')) {
         $.ajax({
           headers: {'x-csrf-token': _token},
           method: 'POST',

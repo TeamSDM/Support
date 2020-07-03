@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ trans('panel.site_title') }}</title>
 </head>
 <body>
     <div class="card">
         <div class="card-header">
-            {{ trans('global.show') }}
+            Ver
         </div>
         <div class="card-body">
             <div class="row text-center">
                 <div class="col-12 col-md-4 col-sm-12">                
                     <div class="shadow rounded p-2">
                         <div class="line-horizontal">
-                            {{ trans('cruds.category.fields.id') }}
+                            ID
                         </div>
                         <div class="p-3">
                             {{ $category->id }}
@@ -26,7 +26,7 @@
                 <div class="col-12 col-md-4 col-sm-12">
                     <div class="shadow rounded p-2">
                         <div class="line-horizontal">
-                            {{ trans('cruds.category.fields.name') }}
+                            Nombre
                         </div>
                     <div class="p-3">
                         {{ $category->name }}
@@ -36,10 +36,10 @@
                 <div class="col-12 col-md-4 col-sm-12">
                    <div class="shadow rounded p-2 ">
                        <div class="line-horizontal">
-                           {{ trans('cruds.category.fields.color') }}
+                           Color
                        </div>
                     <div class="p-3">
-                        <div style="background-color:{{ $category->color ?? '#FFFFFF' }}">
+                        <div style="background-color:{{ $category->color ?? '#000000' }}">
                             <div class="color-size rounded">
                                 
                             </div>
@@ -51,7 +51,7 @@
             <div class="mb-2">
 
                 <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">
-                    {{ trans('global.back_to_list') }}
+                    Volver a la lista
                 </a>
             </div>
         </div>

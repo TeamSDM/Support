@@ -3,45 +3,26 @@
 
 <div class="card rounded">
     <div class="card-header">
-        {{ trans('cruds.auditLog.title_singular') }} {{ trans('global.list') }}
+        <h3>Lista de registros de auditoría</h3>
     </div>
     <div class="card-body">
-        <table class="table table-bordered table-striped table-hover ajaxTable datatable datatable-AuditLog ">
-            <thead class="thead-dark">
+        <table class="table table-borderless table-hover ajaxTable datatable datatable-AuditLog ">
+            <thead class="thead-table">
                 <tr>
-                    <th width="10">
-                        
-                    </th>
-                    
-                    <th>
-                        {{ trans('cruds.auditLog.fields.id') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.auditLog.fields.description') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.auditLog.fields.subject_id') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.auditLog.fields.subject_type') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.auditLog.fields.user_id') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.auditLog.fields.host') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.auditLog.fields.created_at') }}
-                    </th>
-                    <th>
-                        &nbsp;
+                    <th width="10"></th>
+                    {{-- <th><span>ID</span></th> --}}
+                    <th><span>Descripción</span></th>
+                    {{-- <th><span>ID sujeto</span></th> --}}
+                    <th><span>Tipo sujeto</span></th>
+                    <th><span>Usuario</span></th>
+                    <th><span>Host</span></th>
+                    <th><span>Creado</span></th>
+                    <th><span>Opción</span>
+                        {{-- &nbsp; --}}
                     </th>
                 </tr>
             </thead>
         </table>
-
-
     </div>
 </div>
 @endsection
@@ -60,11 +41,11 @@
     ajax: "{{ route('admin.audit-logs.index') }}",
     columns: [
         { data: 'placeholder', name: 'placeholder' },
-        { data: 'id', name: 'id' },
+        //{ data: 'id', name: 'id' },
         { data: 'description', name: 'description' },
-        { data: 'subject_id', name: 'subject_id' },
+       // { data: 'subject_id', name: 'subject_id' },
         { data: 'subject_type', name: 'subject_type' },
-        { data: 'user_id', name: 'user_id' },
+        { data: 'user_id', name: 'user_id' }, //preguntar sobre como incluir el nombre
         { data: 'host', name: 'host' },
         { data: 'created_at', name: 'created_at' },
         { data: 'actions', name: '{{ trans('global.actions') }}' }

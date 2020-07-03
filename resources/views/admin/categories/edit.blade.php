@@ -6,14 +6,14 @@
     <div class="col-12 col-md-5 col-sm-12">
         <div class="card">
             <div class="card-header">
-                {{ trans('global.edit') }} {{ trans('cruds.category.title_singular') }}
+                <h5>Editar Categoria</h5>
             </div>
             <div class="card-body">
                 <form action="{{ route("admin.categories.update", [$category->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                        <label for="name" required>{{ trans('cruds.category.fields.name') }}</label>
+                        <label for="name" required>Nombre</label>
                         <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($category) ? $category->name : '') }}" required>
                         @if($errors->has('name'))
                             <em class="invalid-feedback">
@@ -25,7 +25,7 @@
                         </p>
                     </div>
                     <div class="form-group {{ $errors->has('color') ? 'has-error' : '' }}">
-                        <label for="color">{{ trans('cruds.category.fields.color') }}</label>
+                        <label for="color">Color</label>
                         <input type="text" id="color" name="color" class="form-control colorpicker" value="{{ old('color', isset($category) ? $category->color : '') }}">
                         @if($errors->has('color'))
                             <em class="invalid-feedback">
@@ -37,7 +37,7 @@
                         </p>
                     </div>
                     <div class="text-center">
-                        <input class="btn btn-info" type="submit" value="{{ trans('global.save') }}">
+                        <input class="btn btn-info" type="submit" value="Guardar">
                     </div>
                 </form>
             </div>

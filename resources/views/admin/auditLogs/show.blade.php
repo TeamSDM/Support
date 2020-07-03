@@ -3,76 +3,32 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.auditLog.title') }}
+        <h4>Vizualizar el registro de auditoría</h4>
     </div>
 
     <div class="card-body">
         <div class="mb-2">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-borderless">
                 <tbody>
-                    <tr>
-                        <th class="bg-dark ">
-                            {{ trans('cruds.auditLog.fields.id') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->id }}
-                        </td>
+                    <thead class="thead-table">
+                    <tr class="">
+                        <th width="10"></th>
+                        {{-- <th><span>ID</span></th> --}}
+                        <th><span>Descripción</span></th>
+                        <th><span>Tipo sujeto</span></th>
+                        <th><span>Usuario</span></th>
+                        <th><span>Host</span></th>
+                        <th><span>Creado</span></th>
+                        
                     </tr>
+                    </thead>
                     <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.description') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->description }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.subject_id') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->subject_id }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.subject_type') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->subject_type }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.user_id') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->user_id }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.properties') }}
-                        </th>
-                        <td>
-                            {!! $auditLog->properties !!}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.host') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->host }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="bg-dark">
-                            {{ trans('cruds.auditLog.fields.created_at') }}
-                        </th>
-                        <td>
-                            {{ $auditLog->created_at }}
-                        </td>
+                        <th></th>
+                        <th>{{ $auditLog->description }}</th>
+                        <th>{{ $auditLog->subject_type }}</th>
+                        <th>{{ $auditLog->author_name}}</th>
+                        <th>{{ $auditLog->host }}</th>
+                        <th>{{ $auditLog->created_at }}</th>
                     </tr>
                 </tbody>
             </table>
