@@ -78,7 +78,7 @@
                                                     <label for="comment_text">Deje un comentario</label>
                                                     
                                                     <div class="input-group">
-                                                        <input type="textarea" class="textarea-coment form-control" required>
+                                                        <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
                                                         <span class="input-group-btn">
                                                             <button type="submit" class="btn btn-primary ml-2">@lang('Enviar ')<i class="fas fa-paper-plane"></i></button>
                                                         </span>
@@ -94,11 +94,11 @@
                         </tbody>
                     </table>
                 </div>
-                <a class="btn btn-default my-2" href="{{ route('admin.tickets.index') }}">Volver a la lista</a>
+                {{-- <a class="btn btn-default my-2" href="{{ route('admin.tickets.index') }}">Volver a la lista</a>
         
                 <a href="{{ route('admin.tickets.edit', $ticket->id) }}" class="btn btn-primary">
                     @lang('Editar') @lang('Ticket')
-                </a>
+                </a> --}}
         
                 {{-- <nav class="mb-3">
                     <div class="nav nav-tabs">

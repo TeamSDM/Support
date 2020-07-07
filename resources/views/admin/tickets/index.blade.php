@@ -71,7 +71,7 @@ $('.card-body').on('change', 'select', function() {
 })
   let dtButtons = []
 @can('ticket_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
+  let deleteButtonTrans = 'Eliminar';
   let deleteButton = {
     text: deleteButtonTrans,
     url: "{{ route('admin.tickets.massDestroy') }}",

@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
+use App\Notifications\DataChangeEmailNotification;
 use App\Http\Requests\MassDestroyTicketRequest;
+use App\Notifications\CommentEmailNotification;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 use App\Http\Requests\StoreTicketRequest;
 use App\Http\Requests\UpdateTicketRequest;
 use App\Priority;
@@ -119,13 +123,19 @@ class TicketsController extends Controller
             })
             ->pluck('name', 'id')
             ->prepend(trans('global.pleaseSelect'), '');
-
+            
         return view('admin.tickets.create', compact('statuses', 'priorities', 'categories', 'assigned_to_users'));
     }
 
     public function store(StoreTicketRequest $request)
     {
+        $asigned = User::where('id',$request->input('assigned_to_user_id'))->get('email'); //este es el correo a quien se le asigno
         $ticket = Ticket::create($request->all());
+        $author_email = Ticket::where('author_email',$request->input('author_email'))->get('author_email');
+        
+        
+        // Mail::to($asigned[0]->email);
+        // Mail::to($request->input('author_email')); 
 
         foreach ($request->input('attachments', []) as $file) {
             $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
@@ -217,7 +227,7 @@ class TicketsController extends Controller
         ]);
 
         $ticket->sendCommentNotification($comment);
-
-        return redirect()->back()->withStatus('Your comment added successfully');
+        
+        return redirect()->back()->withStatus('Su comentario ha sido añadido con éxito');
     }
 }

@@ -78,7 +78,7 @@
                                                     <label for="comment_text">Deje un comentario</label>
                                                     
                                                     <div class="input-group">
-                                                        <input type="textarea" class="textarea-coment form-control" required>
+                                                        <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
                                                         <span class="input-group-btn">
                                                             <button type="submit" class="btn btn-primary ml-2">@lang('Enviar ')<i class="fas fa-paper-plane"></i></button>
                                                         </span>
