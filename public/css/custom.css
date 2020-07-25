@@ -125,3 +125,27 @@ table.dataTable thead .sorting_desc {
     border-radius: 10px;
     border: 1px solid black;
 }
+/* Cronometro */
+#cronometro { 
+    border: 1px #000000 solid;
+    text-align: center;
+    border-radius: 10px;
+    float: right;
+    }
+#crono { 
+    padding: 5px 15px 5px;
+    font-family: 'DS-Digital Bold', arial;
+    text-align: center;
+    font-size: 15px;
+}
+/* #cronometro [type=button]  { 
+    margin: 4px;   
+    font: normal 9pt arial; width: 70px; 
+}  */
+
+/* letra h5 */
+.h5{
+    font-size: 20px;
+}
+
+

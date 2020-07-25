@@ -11,7 +11,6 @@
     <div class="card-header">
         <h5>Lista de Ticket's</h5>
     </div>
-    
     <div class="card-body">
         <table class=" table table-borderless table-striped table-hover ajaxTable datatable datatable-Ticket">
             <thead class="thead-table">
@@ -27,10 +26,9 @@
                     <th>Asignado</th>
                     <th>&nbsp;</th>
                 </tr>
-            </thead>
+              </thead>
+               <tbody>
         </table>
-
-
     </div>
 </div>
 @endsection
@@ -99,7 +97,7 @@ $('.card-body').on('change', 'select', function() {
   }
   dtButtons.push(deleteButton)
 @endcan
-  let searchParams = new URLSearchParams(window.location.search)
+  let searchParams = new URLSearchParams(window.location.search)//buscar 
   let dtOverrideGlobals = {
     buttons: dtButtons,
     processing: true,
@@ -116,43 +114,36 @@ $('.card-body').on('change', 'select', function() {
     },
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{
-    data: 'title',
-    name: 'title', 
-    render: function ( data, type, row) {
-        return '<a href="'+row.view_link+'">'+data+' ('+row.comments_count+')</a>';
-    }
-},
-{ 
-  data: 'status_name', 
-  name: 'status.name', 
-  render: function ( data, type, row) {
-      return '<span style="color:'+row.status_color+'">'+data+'</span>';
-  }
-},
-{ 
-  data: 'priority_name', 
-  name: 'priority.name', 
-  render: function ( data, type, row) {
-      return '<span style="color:'+row.priority_color+'">'+data+'</span>';
-  }
-},
-{ 
-  data: 'category_name', 
-  name: 'category.name', 
-  render: function ( data, type, row) {
-      return '<span style="color:'+row.category_color+'">'+data+'</span>';
-  } 
-},
-{ data: 'author_name', name: 'author_name' },
-{ data: 'author_email', name: 'author_email' },
-{ data: 'assigned_to_user_name', name: 'assigned_to_user.name' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+      { data: 'id', name: 'id' },
+      { data: 'title',name: 'title',
+          render: function ( data, type, row) {
+              return '<a href="'+row.view_link+'">'+data+' ('+row.comments_count+')</a>';
+          }
+      },
+      { data: 'status_name', name: 'status.name',
+        render: function ( data, type, row) {
+            return '<span style="color:'+row.status_color+'">'+data+'</span>';
+        }
+      },
+      { data: 'priority_name', name: 'priority.name',
+        render: function ( data, type, row) {
+            return '<span style="color:'+row.priority_color+'">'+data+'</span>';
+        }
+      },
+      { data: 'category_name', name: 'category.name', 
+        render: function ( data, type, row) {
+            return '<span style="color:'+row.category_color+'">'+data+'</span>';
+        } 
+      },
+      { data: 'author_name', name: 'author_name' },
+      { data: 'author_email', name: 'author_email' },
+      { data: 'assigned_to_user_name', name: 'assigned_to_user.name' },
+      { data: 'actions', name: '{{ trans('global.actions') }}' }
+          
     ],
-    order: [[ 1, 'desc' ]],
-    pageLength: 100,
-  };    
+          order: [[ 1, 'desc' ]],
+          pageLength: 25,
+        };    
 $(".datatable-Ticket").one("preInit.dt", function () {
  $(".dataTables_filter").after(filters);
 });
@@ -162,6 +153,5 @@ $(".datatable-Ticket").one("preInit.dt", function () {
             .columns.adjust();
     });
 });
-
 </script>
 @endsection

@@ -29,6 +29,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     {{-- estilos propios --}}
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+    {{-- fuente digital para el cronometro --}}
+    <link href="https://allfont.es/allfont.css?fonts=ds-digital-bold" rel="stylesheet" type="text/css" />
     @yield('styles')
 </head>
 
@@ -114,14 +116,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-        <script src="{{ asset('js/main.js') }}"></script> 
+        {{-- chart --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script src="{{ asset('js/pruebaTorta.js') }}"></script>  --}}
+        <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('js/crono.js') }}"></script>
+        <script src="{{ asset('js/sobra.js') }}"></script>
+        
         <script>
           $(function() {
             
             let copyButtonTrans = 'Copiar'
-            let csvButtonTrans = '{{ trans('global.datatables.csv') }}'
-            let excelButtonTrans = '{{ trans('global.datatables.excel') }}'
-            let pdfButtonTrans = '{{ trans('global.datatables.pdf') }}'
+            let csvButtonTrans = 'CSV'
+            let excelButtonTrans = 'Excel'
+            let pdfButtonTrans = 'PDF'
             let printButtonTrans = 'Imprimir'
             // let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
             
@@ -206,6 +214,7 @@
 
   $.fn.dataTable.ext.classes.sPageButton = '';
 });
+
 
     </script>
     @yield('scripts')

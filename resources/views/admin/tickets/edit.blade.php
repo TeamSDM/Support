@@ -22,7 +22,7 @@
                             {{ trans('cruds.ticket.fields.title_helper') }}
                         </p>
                     </div>
-                    <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
+                    {{-- <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                         <label for="content">Comentario</label>
                         <textarea id="content" name="content" class="form-control ">{{ old('content', isset($ticket) ? $ticket->content : '') }}</textarea>
                         @if($errors->has('content'))
@@ -33,8 +33,8 @@
                         <p class="helper-block">
                             {{ trans('cruds.ticket.fields.content_helper') }}
                         </p>
-                    </div>
-                    <div class="form-group {{ $errors->has('attachments') ? 'has-error' : '' }}">
+                    </div> --}}
+                    {{-- <div class="form-group {{ $errors->has('attachments') ? 'has-error' : '' }}">
                         <label for="attachments">Anexos</label>
                         <div class="text-center dropzone drop-file" id="attachments-dropzone">
                             
@@ -47,7 +47,7 @@
                         <p class="helper-block">
                             {{ trans('cruds.ticket.fields.attachments_helper') }}
                         </p>
-                    </div>
+                    </div> --}}
                     <div class="form-group {{ $errors->has('status_id') ? 'has-error' : '' }}">
                         <label for="status">Estado</label>
                         <select name="status_id" id="status" class="form-control select2" required>
@@ -87,7 +87,7 @@
                             </em>
                         @endif
                     </div>
-                    <div class="form-group {{ $errors->has('author_name') ? 'has-error' : '' }}">
+                    {{-- <div class="form-group {{ $errors->has('author_name') ? 'has-error' : '' }}">
                         <label for="author_name">Nombre del autor</label>
                         <input type="text" id="author_name" name="author_name" class="form-control" value="{{ old('author_name', isset($ticket) ? $ticket->author_name : '') }}">
                         @if($errors->has('author_name'))
@@ -98,8 +98,8 @@
                         <p class="helper-block">
                             {{ trans('cruds.ticket.fields.author_name_helper') }}
                         </p>
-                    </div>
-                    <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
+                    </div> --}}
+                    {{-- <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
                         <label for="author_email">Email del autor</label>
                         <input type="text" id="author_email" name="author_email" class="form-control" value="{{ old('author_email', isset($ticket) ? $ticket->author_email : '') }}">
                         @if($errors->has('author_email'))
@@ -110,7 +110,7 @@
                         <p class="helper-block">
                             {{ trans('cruds.ticket.fields.author_email_helper') }}
                         </p>
-                    </div>
+                    </div> --}}
                     @if(auth()->user()->isAdmin())
                         <div class="form-group {{ $errors->has('assigned_to_user_id') ? 'has-error' : '' }}">
                             <label for="assigned_to_user">Asignado</label>

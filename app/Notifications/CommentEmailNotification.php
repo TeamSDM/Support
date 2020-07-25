@@ -44,7 +44,7 @@ class CommentEmailNotification extends Notification
         return (new MailMessage)
                     ->subject('Nuevo comentario en el Ticket '.$this->comment->ticket->title)
                     ->greeting('Hola,')
-                    ->line('Nuevo comentario en el Ticket <br>'.$this->comment->ticket->title.':')
+                    ->line('Nuevo comentario en el Ticket '.$this->comment->ticket->title.':')
                     ->line('')
                     ->line(Str::limit($this->comment->comment_text, 500))
                     ->action('Ver el Ticket completo', route(optional($notifiable)->id ? 'admin.tickets.show' : 'tickets.show', $this->comment->ticket->id))

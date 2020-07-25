@@ -42,14 +42,10 @@ class TicketsController extends Controller
                 $deleteGate    = 'ticket_delete';
                 $crudRoutePart = 'tickets';
 
-                return view('partials.datatablesActions', compact(
-                    'viewGate',
-                    'editGate',
-                    'deleteGate',
-                    'crudRoutePart',
-                    'row'
-                ));
+                return view('partials.datatablesActions', compact('viewGate','editGate','deleteGate','crudRoutePart','row'));
             });
+            
+            
 
             $table->editColumn('id', function ($row) {
                 return $row->id ? $row->id : "";
