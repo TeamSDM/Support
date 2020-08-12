@@ -25,4 +25,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Comments
     Route::apiResource('comments', 'CommentsApiController');
+
+    // //knowledgeBase
+    Route::apiResource('knowledgebase', 'KnowledgeBaseApiController');
 });

@@ -114,16 +114,16 @@
                     </a>
                 </li>
             @endcan
-            {{-- {{-- @can('knowledgeBase_access') --}}
-                {{-- <li class="nav-item">
-                    <a href="{{ route("admin.knowledgeBase.index") }}" class="nav-link {{ request()->is('admin/knowledgeBase') || request()->is('admin/knowledgeBase/*') ? 'active' : '' }}">
+            @can('knowledgebase_access')
+                 <li class="nav-item">
+                    <a href="{{ route("admin.knowledgebase.index") }}" class="nav-link {{ request()->is('admin/knowledgeBase') || request()->is('admin/knowledgeBase/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-book nav-icon">
 
                         </i>
                         Base de conocimientos
                     </a>
-                </li> --}}
-            {{-- @endcan  --}}
+                </li> 
+            @endcan 
             <li class="nav-item">
                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="nav-icon fas fa-fw fa-sign-out-alt"></i>Cerrar Sesión

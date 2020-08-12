@@ -13,21 +13,22 @@ var listaTiempo = [];
 //restar la fecha inicial y final 
 //guardar ese resultado en una variable con formato fecha 
 activar();
+const globalId = [];
 var listaId = [];
 function activar(idInicio){
-
+  
         //Tomar la fecha inicial al dar clic en ver con el id y almacenarlo en una lista ↓
         if (idInicio === undefined){
             // console.log("está indefinida")
         }
         else{
-            if (tiempoInicial.includes(idInicio) === true){//se valida que el id esté dentro del array
+            if (globalId.includes(idInicio) === true){//se valida que el id esté dentro del array
                 console.log("esto quiere decir que ya está")
             }
             else{
                 inicio = new Date().getTime();// obtener la fecha inicial
-                tiempoInicial.push(idInicio,inicio) //guarda el tiempo inicial junto con el id
-                console.log(tiempoInicial)
+                globalId.push(idInicio,inicio) //guarda el tiempo inicial junto con el id
+                console.log(globalId)
             }
         }
         
@@ -53,6 +54,7 @@ function activar(idInicio){
         localStorage.setItem('inicio', inicio);//guardar en el base de datos el tiempo inicial
         // console.log(tiempoInicial[0])
 }
+console.log(globalId)
 function guardarTiempo(time){
 
 }

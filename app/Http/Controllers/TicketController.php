@@ -61,6 +61,7 @@ class TicketController extends Controller
         $nombre_autor = $author_name[0]->author_name;
         $asunto_ticket = $ticket_title[0]->title;
         $id_ticket = $ticket_id[0]->id;
+        dd($author_email);
        
         // Mail::to($author_email);
         

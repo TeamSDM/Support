@@ -1,7 +1,8 @@
 @can($viewGate)
 {{-- para enviar el id al dar clic en ver es {{ $row->id }} --}}
-        {{-- <a href="{{ route('admin.' . $crudRoutePart . '.show', $row->id) }}"> --}}
-            <input class="btn btn-xs btn-primary" type="button" name="activar" value="Ver" onclick="activar('{{ $row->id }}')" id="inicio">
+        <a href="{{ route('admin.' . $crudRoutePart . '.show', $row->id) }}">
+            {{-- <input class="btn btn-xs btn-primary" type="button" name="activar" value="Ver" onclick="activar('{{ $row->id }}')" id="inicio"> --}}
+            <input class="btn btn-xs btn-primary" type="button" value="Ver" id="inicio">
         </a>
     
 @endcan
@@ -15,4 +16,3 @@
     <input type="submit" class="btn btn-xs btn-danger" value="Eliminar">
 </form>
 @endcan
-<script src="{{ asset('js/crono.js') }}"></script>

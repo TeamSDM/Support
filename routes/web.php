@@ -53,4 +53,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Audit Logs
     Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
+
+    // knowledgebase
+    Route::post('knowledgebase/media', 'KnowledgeBaseController@storeMedia')->name('knowledgebase.storeMedia');
+    Route::delete('knowledgebase/destroy', 'knowledgebaseController@massDestroy')->name('knowledgebase.massDestroy');
+    Route::resource('knowledgebase', 'KnowledgeBaseController');
 });

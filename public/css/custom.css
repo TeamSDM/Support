@@ -148,4 +148,21 @@ table.dataTable thead .sorting_desc {
     font-size: 20px;
 }
 
+.categoria_linea{
+    display: inline-block;
+    background-color: #17a2b8;
+    border-radius: 10%;
+}
+.cardPosition{
+    display: inline;
+}
+
+.cardTitle{
+    text-size-adjust: 50px;
+}
+
+.card_style{
+    display: inline;
+}
+
 
