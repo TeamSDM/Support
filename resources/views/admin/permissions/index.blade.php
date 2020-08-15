@@ -74,7 +74,7 @@
         return
       }
 
-      if (confirm('¿está seguro?')) {
+      if (confirm('¿Está seguro?')) {
         $.ajax({
           headers: {'x-csrf-token': _token},
           method: 'POST',

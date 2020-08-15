@@ -33,7 +33,7 @@
                 </tbody>
             </table>
             <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">
-                {{ trans('global.back_to_list') }}
+                Volver a la lista
             </a>
         </div>
 

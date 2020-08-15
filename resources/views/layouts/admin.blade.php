@@ -40,7 +40,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <span class="navbar-brand-full">Título</span>
+            <span class="navbar-brand-full">Mesa de ayuda Lagobo</span>
             <span class="navbar-brand-minimized">{{ trans('panel.site_title') }}</span>
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -120,8 +120,6 @@
         {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
         <script src="{{ asset('js/pruebaTorta.js') }}"></script>  --}}
         <script src="{{ asset('js/main.js') }}"></script>
-        <script src="{{ asset('js/crono.js') }}"></script>
-        <script src="{{ asset('js/sobra.js') }}"></script>
         
         <script>
           $(function() {

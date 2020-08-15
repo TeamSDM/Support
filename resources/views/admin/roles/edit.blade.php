@@ -25,7 +25,7 @@
                         </p>
                     </div>
                     <div class="form-group {{ $errors->has('permissions') ? 'has-error' : '' }}">
-                        <label for="permissions">{{ trans('cruds.role.fields.permissions') }}*
+                        <label for="permissions">Permisos
                             <span class="btn btn-primary btn-xs select-all">Seleccionar todo</span>
                             <span class="btn btn-primary btn-xs deselect-all">Deseleccionar todo</span></label>
                         <select name="permissions[]" id="permissions" class="form-control select2" multiple="multiple" required>

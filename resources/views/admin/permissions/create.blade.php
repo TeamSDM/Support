@@ -22,7 +22,7 @@
                         </p>
                     </div>
                     <div class="text-center">
-                        <input class="btn btn-info" type="submit" value="{{ trans('global.save') }}">
+                        <input class="btn btn-info" type="submit" value="Guardar">
                     </div>
                 </form>
         

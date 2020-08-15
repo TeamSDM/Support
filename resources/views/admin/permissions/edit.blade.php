@@ -4,10 +4,7 @@
     <div class="col-12 col-md-3 col-sm-12"></div>
     <div class="col-12 col-md-5 col-sm-12">
         <div class="card">
-            <div class="card-header">
-                {{ trans('global.edit') }} {{ trans('cruds.permission.title_singular') }}
-            </div>
-        
+            <div class="card-header"><h5>Editar permisos</h5></div>
             <div class="card-body">
                 <form action="{{ route("admin.permissions.update", [$permission->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
